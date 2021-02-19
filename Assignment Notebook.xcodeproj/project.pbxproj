@@ -11,6 +11,8 @@
 		3F62FA2125E01B8400812691 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F62FA2025E01B8400812691 /* ContentView.swift */; };
 		3F62FA2325E01B8A00812691 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F62FA2225E01B8A00812691 /* Assets.xcassets */; };
 		3F62FA2625E01B8A00812691 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F62FA2525E01B8A00812691 /* Preview Assets.xcassets */; };
+		3F62FA3325E01D9200812691 /* AssignmentNotebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F62FA3225E01D9200812691 /* AssignmentNotebook.swift */; };
+		3F62FA3625E01DCC00812691 /* CreateAnAssignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F62FA3525E01DCC00812691 /* CreateAnAssignment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		3F62FA2225E01B8A00812691 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F62FA2525E01B8A00812691 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3F62FA2725E01B8A00812691 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F62FA3225E01D9200812691 /* AssignmentNotebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentNotebook.swift; sourceTree = "<group>"; };
+		3F62FA3525E01DCC00812691 /* CreateAnAssignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAnAssignment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			children = (
 				3F62FA1E25E01B8400812691 /* Assignment_NotebookApp.swift */,
 				3F62FA2025E01B8400812691 /* ContentView.swift */,
+				3F62FA3225E01D9200812691 /* AssignmentNotebook.swift */,
+				3F62FA3525E01DCC00812691 /* CreateAnAssignment.swift */,
 				3F62FA2225E01B8A00812691 /* Assets.xcassets */,
 				3F62FA2725E01B8A00812691 /* Info.plist */,
 				3F62FA2425E01B8A00812691 /* Preview Content */,
@@ -140,6 +146,8 @@
 			files = (
 				3F62FA2125E01B8400812691 /* ContentView.swift in Sources */,
 				3F62FA1F25E01B8400812691 /* Assignment_NotebookApp.swift in Sources */,
+				3F62FA3325E01D9200812691 /* AssignmentNotebook.swift in Sources */,
+				3F62FA3625E01DCC00812691 /* CreateAnAssignment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
