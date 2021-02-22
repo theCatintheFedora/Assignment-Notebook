@@ -7,14 +7,17 @@
 
 import SwiftUI
 
-struct CreateAnAssignment: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+struct CreateAssignment: View {
+    @ObservedObject var assignments: Assignment
+    @State private var priority = ""
+    @State private var description = ""
+    @State private var dueDate = Date()
+    @Environment(\.presentationMode) var presentationMode
+        static let priorites = ["High", "Medium", "Low"]
 }
 
 struct CreateAnAssignment_Previews: PreviewProvider {
     static var previews: some View {
-        CreateAnAssignment()
+        CreateAssignment(assignments: Assignment())
     }
 }

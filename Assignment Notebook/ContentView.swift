@@ -8,16 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var assignments =
-        [Assignment(priority: "High", description: "DOB Technical Report", dueDate: Date()),
-         Assignment(priority: "Medium", description: "Spanish Checkpoint One", dueDate: Date()),
-         Assignment(priority: "Low", description: "AP Comp Gov Podcast", dueDate: Date())]
+    @ObservedObject var assignments = Assignment()
     
     var body: some View {
         NavigationView {
             List {
                 ForEach(assignments) { item in
-                    Text(item.description)
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(item.priority)
+                                .font(.headline)
+                            Text(item.description)
+                        }
+                        Spacer()
+                        Text(item.dueDate, style: .date)
+                    }
                 }
                 .onMove(perform: { indices, newOffset in
                     assignments.move(fromOffsets: indices, toOffset: newOffset)
@@ -42,5 +47,4 @@ struct Assignment: Identifiable {
     var priority = String()
     var description = String()
     var dueDate = Date()
-    
 }
