@@ -8,16 +8,28 @@
 import SwiftUI
 
 struct CreateAssignment: View {
-    @ObservedObject var assignments: Assignment
-    @State private var priority = ""
+    @ObservedObject var assignmentList: AssignmentList
+    @State private var course = ""
     @State private var description = ""
     @State private var dueDate = Date()
     @Environment(\.presentationMode) var presentationMode
-        static let priorites = ["High", "Medium", "Low"]
+    static let courses = ["Precalc", "Spanish", "Mobile Apps Dev", "HES", "AP Comp Gov", "PLTW DE", "AP Seminar"]
+    
+    var body: some View {
+        NavigationView {
+            Form {
+                Picker("Course", selection: $course) {
+                    ForEach(Self.courses, id: \.self) { courses in
+                        Text(course)
+                    }
+                }
+            }
+        }
+    }
 }
 
 struct CreateAnAssignment_Previews: PreviewProvider {
     static var previews: some View {
-        CreateAssignment(assignments: Assignment())
+        CreateAssignment(assignmentList: AssignmentList())
     }
 }
