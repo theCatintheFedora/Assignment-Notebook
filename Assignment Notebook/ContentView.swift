@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var assignmentList = AssignmentList()
+    @State private var showingCreateAnAssignment = false
     
     var body: some View {
         NavigationView {
@@ -31,8 +32,15 @@ struct ContentView: View {
                     assignmentList.items.remove(atOffsets: indexSet)
                 })
             }
+            .sheet(isPresented: $showingCreateAnAssignment, content: {
+                CreateAssignment(assignmentList: assignmentList)
+            })
             .navigationBarTitle("Assignments Due")
-            .navigationBarItems(leading: EditButton())
+            .navigationBarItems(leading: EditButton(),
+                                trailing: Button(action: {
+                                                    showingCreateAnAssignment = true}) {
+                                    Image(systemName: "plus")
+                                })
         }
     }
 }
@@ -42,7 +50,7 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-struct Assignment: Identifiable {
+struct Assignment: Identifiable, Codable {
     var id = UUID()
     var course = String()
     var description = String()

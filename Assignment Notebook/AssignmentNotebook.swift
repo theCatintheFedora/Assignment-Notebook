@@ -8,7 +8,22 @@
 import Foundation
 
 class AssignmentList: ObservableObject {
-    @Published var items = [Assignment(course: "PLTW", description: "DOB Technical Report", dueDate: Date()),
-                            Assignment(course: "Spanish", description: "Spanish Checkpoint One", dueDate: Date()),
-                            Assignment(course: "AP Gov", description: "AP Comp Gov Podcast", dueDate: Date())]
+    @Published var items : [Assignment] {
+        didSet {
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(items) {
+                UserDefaults.standard.set(encoded, forKey: "data")
+            }
+        }
+    }
+    init() {
+        if let items = UserDefaults.standard.data(forKey: "data") {
+            let decoder = JSONDecoder()
+            if let decoded = try? decoder.decode([Assignment].self, from: items) {
+                self.items = decoded
+                return
+            }
+        }
+        items = []
+    }
 }
